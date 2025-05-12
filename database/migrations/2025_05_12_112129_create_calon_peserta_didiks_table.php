@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('student_registrations', function (Blueprint $table) {
+        Schema::create('calon_peserta_didiks', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('student_registrations');
+        Schema::dropIfExists('calon_peserta_didiks');
     }
 };
