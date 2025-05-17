@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('pekerjaan_ortu');
             $table->enum('package', ['Paket A', 'Paket B', 'Paket C']);
             $table->foreignId('academic_year_id')->constrained()->onDelete('cascade');
+            $table->enum('jurusan_pilihan', ['Paket A', 'Paket B', 'Paket C']);
             $table->timestamps();
         });
     }

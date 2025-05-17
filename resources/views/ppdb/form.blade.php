@@ -45,6 +45,9 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
+        .file-upload-label:hover {
+            background-color: #e5e7eb;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-blue-100">
@@ -54,8 +57,8 @@
         <div class="container mx-auto px-4 py-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center mb-4 md:mb-0">
-                    <div class="bg-white rounded-xl p-3 mr-4 shadow-lg transform rotate-6">
-                        <div class="w-14 h-14 bg-blue-100 flex items-center justify-center rounded-lg">
+                    <div class="bg-white rounded-xl p-3 mr-4">
+                    <div class="w-16 h-16 bg-white flex items-center justify-center rounded-lg">
                             <img src="https://dinaspendidikankotapalembang.com/image/logo.png" alt="Logo" class="w-full h-full object-contain">
                         </div>
                     </div>
@@ -63,8 +66,8 @@
                         <h1 class="text-2xl md:text-3xl font-bold tracking-tight">SKB DINAS PENDIDIKAN KOTA PALEMBANG</h1>
                         <p class="text-blue-100 text-sm md:text-base mt-1">Penerimaan Peserta Didik Baru Tahun 2025/2026</p>
                     </div>
-                </div>
-                <div class="bg-white text-primary px-6 py-3 rounded-xl shadow-lg transform -rotate-1 hover:rotate-0 transition">
+                    </div>
+                <div class="bg-white text-primary px-6 py-3 rounded-xl shadow-lg">
                     <p class="font-bold text-sm md:text-base">Formulir Pendaftaran Online</p>
                 </div>
             </div>
@@ -107,7 +110,7 @@
                         <span class="font-bold">3</span>
                     </div>
                     <span class="text-xs mt-2 font-medium" 
-                          x-bind:class="{'text-primary font-bold': currentStep === 3, 'text-gray-500': currentStep !== 3}">Pilihan Jurusan</span>
+                          x-bind:class="{'text-primary font-bold': currentStep === 3, 'text-gray-500': currentStep !== 3}">Upload Dokumen</span>
                 </div>
             </div>
         </div>
@@ -137,7 +140,7 @@
                         <!-- Nama Lengkap -->
                         <div class="md:col-span-2">
                             <label class="block text-sm font-bold text-gray-700 mb-2">Nama Lengkap <span class="text-red-500">*</span></label>
-                            <input type="text" x-model="formData.nama_lengkap" 
+                            <input type="text" x-model="formData.nama_lengkap" required
                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
                         </div>
                         <!-- Jenis Kelamin -->
@@ -145,7 +148,7 @@
                             <label class="block text-sm font-bold text-gray-700 mb-2">Jenis Kelamin <span class="text-red-500">*</span></label>
                             <div class="flex space-x-6">
                                 <label class="inline-flex items-center">
-                                    <input type="radio" name="jenis_kelamin" value="L" x-model="formData.jenis_kelamin" 
+                                    <input type="radio" name="jenis_kelamin" value="L" x-model="formData.jenis_kelamin" required
                                            class="h-5 w-5 text-primary focus:ring-primary border-2 border-gray-300">
                                     <span class="ml-3 text-gray-700 font-medium">Laki-laki</span>
                                 </label>
@@ -159,19 +162,19 @@
                         <!-- Tempat Lahir -->
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Tempat Lahir <span class="text-red-500">*</span></label>
-                            <input type="text" x-model="formData.tempat_lahir" 
+                            <input type="text" x-model="formData.tempat_lahir" required
                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
                         </div>
                         <!-- Tanggal Lahir -->
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Tanggal Lahir <span class="text-red-500">*</span></label>
-                            <input type="date" x-model="formData.tanggal_lahir" 
+                            <input type="date" x-model="formData.tanggal_lahir" required
                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition text-gray-700">
                         </div>
                         <!-- Agama -->
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Agama <span class="text-red-500">*</span></label>
-                            <select x-model="formData.agama" 
+                            <select x-model="formData.agama" required
                                     class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition text-gray-700">
                                 <option value="" class="text-gray-400">Pilih Agama</option>
                                 <option value="Islam">Islam</option>
@@ -185,39 +188,39 @@
                         <!-- Pekerjaan -->
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Pekerjaan <span class="text-red-500">*</span></label>
-                            <input type="text" x-model="formData.pekerjaan" 
+                            <input type="text" x-model="formData.pekerjaan" required
                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400" 
                                    placeholder="Siswa/Mahasiswa/Pelajar">
                         </div>
                         <!-- Kebangsaan -->
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Kebangsaan <span class="text-red-500">*</span></label>
-                            <input type="text" x-model="formData.kebangsaan" 
+                            <input type="text" x-model="formData.kebangsaan" required
                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-gray-100 text-gray-600" 
                                    value="WNI" readonly>
                         </div>
                         <!-- Alamat -->
                         <div class="md:col-span-2">
                             <label class="block text-sm font-bold text-gray-700 mb-2">Alamat Lengkap <span class="text-red-500">*</span></label>
-                            <textarea x-model="formData.alamat" rows="3" 
+                            <textarea x-model="formData.alamat" rows="3" required
                                       class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400"></textarea>
                         </div>
                         <!-- Kontak -->
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">No. HP/WhatsApp <span class="text-red-500">*</span></label>
-                            <input type="text" x-model="formData.no_hp" 
+                            <input type="text" x-model="formData.no_hp" required
                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
                         </div>
                         <!-- Email -->
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Email <span class="text-red-500">*</span></label>
-                            <input type="email" x-model="formData.email" 
+                            <input type="email" x-model="formData.email" required
                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
                         </div>
                         <!-- Jenjang Asal -->
                         <div class="md:col-span-2">
                             <label class="block text-sm font-bold text-gray-700 mb-2">Pilih Paket Belajar <span class="text-red-500">*</span></label>
-                            <select x-model="formData.asal_sekolah" 
+                            <select x-model="formData.asal_sekolah" required
                                     class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition text-gray-700">
                                 <option value="" class="text-gray-400">Pilih Paket Belajar</option>
                                 <option value="Paket A">Paket A</option>
@@ -228,157 +231,184 @@
                         <!-- Nama Lembaga -->
                         <div class="md:col-span-2">
                             <label class="block text-sm font-bold text-gray-700 mb-2">Nama Lembaga (SMP/MTs) <span class="text-red-500">*</span></label>
-                            <input type="text" x-model="formData.nama_lembaga" 
+                            <input type="text" x-model="formData.nama_lembaga" required
                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
                         </div>
                         <!-- Alamat Lembaga -->
                         <div class="md:col-span-2">
                             <label class="block text-sm font-bold text-gray-700 mb-2">Alamat Lembaga <span class="text-red-500">*</span></label>
-                            <textarea x-model="formData.alamat_lembaga" rows="3" 
+                            <textarea x-model="formData.alamat_lembaga" rows="3" required
                                       class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400"></textarea>
                         </div>
                     </div>
                 </div>
-
+            
                 <!-- Step 2: Data Orang Tua -->
                 <div x-show="currentStep === 2" class="form-section space-y-6">
                     <h3 class="text-xl font-bold mb-6 text-primary border-b-2 border-primary pb-3 flex items-center">
                         <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                             <i class="fas fa-users text-primary"></i>
                         </div>
-                        Data Orang Tua/Wali
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Data Ayah -->
-                        <div class="md:col-span-2 bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
-                            <h4 class="font-bold text-lg text-primary mb-4 flex items-center">
-                                <i class="fas fa-male mr-2"></i> Data Ayah Kandung
-                            </h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-bold text-gray-700 mb-2">Nama Ayah <span class="text-red-500">*</span></label>
-                                    <input type="text" x-model="formData.nama_ayah" 
-                                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-bold text-gray-700 mb-2">Pekerjaan Ayah <span class="text-red-500">*</span></label>
-                                    <select x-model="formData.pekerjaan_ayah" 
-                                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition text-gray-700">
-                                        <option value="" class="text-gray-400">Pilih Pekerjaan</option>
-                                        <option value="PNS">PNS</option>
-                                        <option value="TNI/Polri">TNI/Polri</option>
-                                        <option value="Swasta">Swasta</option>
-                                        <option value="Wiraswasta">Wiraswasta</option>
-                                        <option value="Lainnya">Lainnya</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Data Ibu -->
-                        <div class="md:col-span-2 bg-gradient-to-r from-pink-50 to-pink-100 p-6 rounded-xl border border-pink-200">
-                            <h4 class="font-bold text-lg text-pink-700 mb-4 flex items-center">
-                                <i class="fas fa-female mr-2"></i> Data Ibu Kandung
-                            </h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-bold text-gray-700 mb-2">Nama Ibu <span class="text-red-500">*</span></label>
-                                    <input type="text" x-model="formData.nama_ibu" 
-                                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-bold text-gray-700 mb-2">Pekerjaan Ibu <span class="text-red-500">*</span></label>
-                                    <select x-model="formData.pekerjaan_ibu" 
-                                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition text-gray-700">
-                                        <option value="" class="text-gray-400">Pilih Pekerjaan</option>
-                                        <option value="Ibu Rumah Tangga">Ibu Rumah Tangga</option>
-                                        <option value="PNS">PNS</option>
-                                        <option value="Swasta">Swasta</option>
-                                        <option value="Wiraswasta">Wiraswasta</option>
-                                        <option value="Lainnya">Lainnya</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Kontak Orang Tua -->
-                        <div class="md:col-span-2">
-                            <label class="block text-sm font-bold text-gray-700 mb-2">No. HP Orang Tua <span class="text-red-500">*</span></label>
-                            <input type="text" x-model="formData.no_hp_ortu" 
-                                   class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
-                        </div>
-                    </div>
+        Data Orang Tua/Wali
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Data Ayah -->
+        <div class="md:col-span-2 bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
+            <h4 class="font-bold text-lg text-primary mb-4 flex items-center">
+                <i class="fas fa-male mr-2"></i> Data Ayah Kandung
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">Nama Ayah <span class="text-red-500">*</span></label>
+                    <input type="text" x-model="formData.nama_ayah" required
+                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
                 </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">Pekerjaan Ayah <span class="text-red-500">*</span></label>
+                    <input type="text" x-model="formData.pekerjaan_ayah" required
+                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400"
+                           placeholder="Masukkan pekerjaan ayah">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Data Ibu -->
+        <div class="md:col-span-2 bg-gradient-to-r from-pink-50 to-pink-100 p-6 rounded-xl border border-pink-200">
+            <h4 class="font-bold text-lg text-pink-700 mb-4 flex items-center">
+                <i class="fas fa-female mr-2"></i> Data Ibu Kandung
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">Nama Ibu <span class="text-red-500">*</span></label>
+                    <input type="text" x-model="formData.nama_ibu" required
+                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">Pekerjaan Ibu <span class="text-red-500">*</span></label>
+                    <input type="text" x-model="formData.pekerjaan_ibu" required
+                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400"
+                           placeholder="Masukkan pekerjaan ibu">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kontak Orang Tua -->
+        <div class="md:col-span-2">
+            <label class="block text-sm font-bold text-gray-700 mb-2">No. HP Orang Tua <span class="text-red-500">*</span></label>
+            <input type="text" x-model="formData.no_hp_ortu" required
+                   class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
+        </div>
+    </div>
+</div>
 
-                <!-- Step 3: Pilihan Jurusan -->
+                <!-- Step 3: Upload Dokumen -->
                 <div x-show="currentStep === 3" class="form-section space-y-6">
                     <h3 class="text-xl font-bold mb-6 text-primary border-b-2 border-primary pb-3 flex items-center">
                         <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-graduation-cap text-primary"></i>
+                            <i class="fas fa-file-upload text-primary"></i>
                         </div>
-                        Pilihan Jurusan
+                        Upload Persyaratan Dokumen
                     </h3>
-                    <div class="grid grid-cols-1 gap-6">
-                        <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
-                            <h4 class="font-bold text-lg text-gray-800 mb-4">Pilih Jurusan <span class="text-red-500">*</span></h4>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <label class="flex items-center p-4 border-2 rounded-xl cursor-pointer radio-card transition-all duration-300"
-                                       :class="{'border-primary bg-blue-50 shadow-md': formData.jurusan_pilihan === 'IPA'}">
-                                    <input type="radio" name="jurusan_pilihan" value="IPA" x-model="formData.jurusan_pilihan" 
-                                           class="h-5 w-5 text-primary focus:ring-primary border-2 border-gray-300">
-                                    <div class="ml-4">
-                                        <span class="block font-bold text-gray-900">IPA</span>
-                                        <span class="block text-sm text-gray-600 mt-1">Ilmu Pengetahuan Alam</span>
-                                    </div>
-                                </label>
-                                <label class="flex items-center p-4 border-2 rounded-xl cursor-pointer radio-card transition-all duration-300"
-                                       :class="{'border-primary bg-blue-50 shadow-md': formData.jurusan_pilihan === 'IPS'}">
-                                    <input type="radio" name="jurusan_pilihan" value="IPS" x-model="formData.jurusan_pilihan" 
-                                           class="h-5 w-5 text-primary focus:ring-primary border-2 border-gray-300">
-                                    <div class="ml-4">
-                                        <span class="block font-bold text-gray-900">IPS</span>
-                                        <span class="block text-sm text-gray-600 mt-1">Ilmu Pengetahuan Sosial</span>
-                                    </div>
-                                </label>
-                                <label class="flex items-center p-4 border-2 rounded-xl cursor-pointer radio-card transition-all duration-300"
-                                       :class="{'border-primary bg-blue-50 shadow-md': formData.jurusan_pilihan === 'Bahasa'}">
-                                    <input type="radio" name="jurusan_pilihan" value="Bahasa" x-model="formData.jurusan_pilihan" 
-                                           class="h-5 w-5 text-primary focus:ring-primary border-2 border-gray-300">
-                                    <div class="ml-4">
-                                        <span class="block font-bold text-gray-900">Bahasa</span>
-                                        <span class="block text-sm text-gray-600 mt-1">Bahasa dan Sastra</span>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        <!-- Persyaratan -->
-                        <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 border-l-4 border-yellow-400 p-5 rounded-r-lg">
-                            <div class="flex">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-exclamation-circle text-yellow-500 text-2xl mt-1"></i>
+                    
+                    <div class="space-y-6">
+                        <!-- Kartu Keluarga -->
+                        <div class="bg-white p-6 rounded-xl border-2 border-gray-200">
+                            <label class="block text-sm font-bold text-gray-700 mb-3">Upload Kartu Keluarga (KK) <span class="text-red-500">*</span></label>
+                            <div class="flex items-center">
+                                <div x-data="{ fileName: '' }" class="flex-grow">
+                                    <input type="file" id="kk" accept=".pdf" @change="fileName = $event.target.files[0]?.name; formData.kk = $event.target.files[0]" required
+                                           class="hidden">
+                                    <label for="kk" class="cursor-pointer bg-gray-100 hover:bg-gray-200 px-4 py-3 rounded-lg border border-gray-300 flex items-center justify-between transition file-upload-label">
+                                        <span x-text="fileName || 'Pilih file PDF'" class="text-gray-700 truncate"></span>
+                                        <i class="fas fa-cloud-upload-alt text-gray-500 ml-3"></i>
+                                    </label>
                                 </div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-bold text-yellow-800">Persyaratan Pendaftaran</h4>
-                                    <div class="mt-3 text-sm text-yellow-700">
-                                        <ul class="list-disc pl-5 space-y-2">
-                                            <li>Fotokopi rapor kelas 7-9</li>
-                                            <li>Fotokopi akta kelahiran dan KK</li>
-                                            <li>Pas foto 3x4 (2 lembar)</li>
-                                            <li>Surat keterangan lulus dari sekolah asal</li>
-                                            <li>Fotokopi SKHUN (bagi yang sudah memiliki)</li>
-                                        </ul>
-                                    </div>
+                                <div x-show="fileName" class="ml-4">
+                                    <button type="button" @click="fileName = ''; formData.kk = null; document.getElementById('kk').value = ''" 
+                                            class="text-red-500 hover:text-red-700">
+                                        <i class="fas fa-times-circle text-xl"></i>
+                                    </button>
                                 </div>
                             </div>
+                            <p class="text-xs text-gray-500 mt-2">Format: PDF (Maksimal 2MB)</p>
                         </div>
+                        
+                        <!-- Akta Kelahiran -->
+                        <div class="bg-white p-6 rounded-xl border-2 border-gray-200">
+                            <label class="block text-sm font-bold text-gray-700 mb-3">Upload Akta Kelahiran <span class="text-red-500">*</span></label>
+                            <div class="flex items-center">
+                                <div x-data="{ fileName: '' }" class="flex-grow">
+                                    <input type="file" id="akta" accept=".pdf" @change="fileName = $event.target.files[0]?.name; formData.akta = $event.target.files[0]" required
+                                           class="hidden">
+                                    <label for="akta" class="cursor-pointer bg-gray-100 hover:bg-gray-200 px-4 py-3 rounded-lg border border-gray-300 flex items-center justify-between transition file-upload-label">
+                                        <span x-text="fileName || 'Pilih file PDF'" class="text-gray-700 truncate"></span>
+                                        <i class="fas fa-cloud-upload-alt text-gray-500 ml-3"></i>
+                                    </label>
+                                </div>
+                                <div x-show="fileName" class="ml-4">
+                                    <button type="button" @click="fileName = ''; formData.akta = null; document.getElementById('akta').value = ''" 
+                                            class="text-red-500 hover:text-red-700">
+                                        <i class="fas fa-times-circle text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Format: PDF (Maksimal 2MB)</p>
+                        </div>
+                        
+                        <!-- Ijazah/SKHUN -->
+                        <div class="bg-white p-6 rounded-xl border-2 border-gray-200">
+                            <label class="block text-sm font-bold text-gray-700 mb-3">Upload Ijazah/SKHUN <span class="text-red-500">*</span></label>
+                            <div class="flex items-center">
+                                <div x-data="{ fileName: '' }" class="flex-grow">
+                                    <input type="file" id="ijazah" accept=".pdf" @change="fileName = $event.target.files[0]?.name; formData.ijazah = $event.target.files[0]" required
+                                           class="hidden">
+                                    <label for="ijazah" class="cursor-pointer bg-gray-100 hover:bg-gray-200 px-4 py-3 rounded-lg border border-gray-300 flex items-center justify-between transition file-upload-label">
+                                        <span x-text="fileName || 'Pilih file PDF'" class="text-gray-700 truncate"></span>
+                                        <i class="fas fa-cloud-upload-alt text-gray-500 ml-3"></i>
+                                    </label>
+                                </div>
+                                <div x-show="fileName" class="ml-4">
+                                    <button type="button" @click="fileName = ''; formData.ijazah = null; document.getElementById('ijazah').value = ''" 
+                                            class="text-red-500 hover:text-red-700">
+                                        <i class="fas fa-times-circle text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Format: PDF (Maksimal 2MB)</p>
+                        </div>
+                        
+                        <!-- Pas Foto -->
+                        <div class="bg-white p-6 rounded-xl border-2 border-gray-200">
+                            <label class="block text-sm font-bold text-gray-700 mb-3">Upload Pas Foto 3x4 <span class="text-red-500">*</span></label>
+                            <div class="flex items-center">
+                                <div x-data="{ fileName: '' }" class="flex-grow">
+                                    <input type="file" id="foto" accept=".pdf,.jpg,.jpeg,.png" @change="fileName = $event.target.files[0]?.name; formData.foto = $event.target.files[0]" required
+                                           class="hidden">
+                                    <label for="foto" class="cursor-pointer bg-gray-100 hover:bg-gray-200 px-4 py-3 rounded-lg border border-gray-300 flex items-center justify-between transition file-upload-label">
+                                        <span x-text="fileName || 'Pilih file (PDF/JPG/PNG)'" class="text-gray-700 truncate"></span>
+                                        <i class="fas fa-cloud-upload-alt text-gray-500 ml-3"></i>
+                                    </label>
+                                </div>
+                                <div x-show="fileName" class="ml-4">
+                                    <button type="button" @click="fileName = ''; formData.foto = null; document.getElementById('foto').value = ''" 
+                                            class="text-red-500 hover:text-red-700">
+                                        <i class="fas fa-times-circle text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Format: PDF/JPG/PNG (Maksimal 2MB)</p>
+                        </div>
+                        
                         <!-- Pernyataan -->
                         <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-5 rounded-lg border border-gray-200">
                             <div class="flex items-start">
                                 <div class="flex items-center h-5 mt-1">
-                                    <input id="pernyataan" type="checkbox" x-model="formData.pernyataan" 
+                                    <input id="pernyataan" type="checkbox" x-model="formData.pernyataan" required
                                            class="h-5 w-5 text-primary focus:ring-primary border-2 border-gray-300 rounded">
                                 </div>
                                 <div class="ml-4">
-                                    <label for="pernyataan" class="font-bold text-gray-700">Dengan ini saya menyatakan bahwa semua data yang saya isi adalah benar. <span class="text-red-500">*</span></label>
-                                    <p class="text-sm text-gray-600 mt-1">Data yang sudah dikirim tidak dapat diubah kembali. Pastikan semua data yang Anda masukkan sudah benar.</p>
+                                    <label for="pernyataan" class="font-bold text-gray-700">Dengan ini saya menyatakan bahwa semua data dan dokumen yang saya upload adalah benar dan asli. <span class="text-red-500">*</span></label>
+                                    <p class="text-sm text-gray-600 mt-1">Data dan dokumen yang sudah dikirim tidak dapat diubah kembali. Pastikan semua data dan dokumen yang Anda upload sudah benar.</p>
                                 </div>
                             </div>
                         </div>
@@ -436,6 +466,7 @@
         Alpine.data('ppdbForm', () => ({
             currentStep: 1,
             formData: {
+                // Data Pribadi
                 nama_lengkap: '',
                 jenis_kelamin: '',
                 tempat_lahir: '',
@@ -446,66 +477,96 @@
                 alamat: '',
                 no_hp: '',
                 email: '',
+                
+                // Data Pendidikan
                 asal_sekolah: '',
                 nama_lembaga: '',
                 alamat_lembaga: '',
+                
+                // Data Orang Tua
                 nama_ayah: '',
                 pekerjaan_ayah: '',
                 nama_ibu: '',
                 pekerjaan_ibu: '',
                 no_hp_ortu: '',
-                jurusan_pilihan: '',
+                
+                // Upload Dokumen
+                kk: null,
+                akta: null,
+                ijazah: null,
+                foto: null,
+                
+                // Pernyataan
                 pernyataan: false
             },
+            
             nextStep() {
+                // Validasi sebelum pindah ke step berikutnya
                 if (this.validateStep()) {
                     this.currentStep++;
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             },
+            
             prevStep() {
                 this.currentStep--;
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             },
+            
             validateStep() {
+                // Validasi sederhana untuk setiap step
                 if (this.currentStep === 1) {
-                    if (!this.formData.nama_lengkap) return this.showError('Nama lengkap harus diisi');
-                    if (!this.formData.jenis_kelamin) return this.showError('Jenis kelamin harus dipilih');
-                    if (!this.formData.tanggal_lahir) return this.showError('Tanggal lahir harus diisi');
-                    if (!this.formData.agama) return this.showError('Agama harus dipilih');
-                    if (!this.formData.no_hp) return this.showError('Nomor HP harus diisi');
-                    if (!this.formData.email) return this.showError('Email harus diisi');
-                    if (!this.formData.asal_sekolah) return this.showError('Paket belajar harus dipilih');
-                }
-                if (this.currentStep === 2) {
-                    if (!this.formData.nama_ayah) return this.showError('Nama ayah harus diisi');
-                    if (!this.formData.pekerjaan_ayah) return this.showError('Pekerjaan ayah harus dipilih');
-                    if (!this.formData.nama_ibu) return this.showError('Nama ibu harus diisi');
-                    if (!this.formData.pekerjaan_ibu) return this.showError('Pekerjaan ibu harus dipilih');
-                }
-                if (this.currentStep === 3) {
-                    if (!this.formData.jurusan_pilihan) return this.showError('Jurusan harus dipilih');
-                    if (!this.formData.pernyataan) return this.showError('Anda harus menyetujui pernyataan');
+                    if (!this.formData.nama_lengkap || 
+                        !this.formData.jenis_kelamin || 
+                        !this.formData.tempat_lahir || 
+                        !this.formData.tanggal_lahir || 
+                        !this.formData.agama || 
+                        !this.formData.pekerjaan || 
+                        !this.formData.alamat || 
+                        !this.formData.no_hp || 
+                        !this.formData.email || 
+                        !this.formData.asal_sekolah || 
+                        !this.formData.nama_lembaga || 
+                        !this.formData.alamat_lembaga) {
+                        alert('Harap lengkapi semua data pribadi dan pendidikan!');
+                        return false;
+                    }
+                } else if (this.currentStep === 2) {
+                    if (!this.formData.nama_ayah || 
+                        !this.formData.pekerjaan_ayah || 
+                        !this.formData.nama_ibu || 
+                        !this.formData.pekerjaan_ibu || 
+                        !this.formData.no_hp_ortu) {
+                        alert('Harap lengkapi semua data orang tua!');
+                        return false;
+                    }
                 }
                 return true;
             },
-            showError(message) {
-                alert('Error: ' + message);
-                return false;
-            },
+            
             submitForm() {
-                if (this.validateStep()) {
-                    // Simulasi pengiriman data
-                    const loading = alert('Sedang mengirim data...');
-                    
-                    setTimeout(() => {
-                        alert('Pendaftaran berhasil dikirim!\nNo. Pendaftaran: PPDB-' + Math.floor(Math.random() * 10000));
-                        this.resetForm();
-                    }, 1500);
+                // Validasi final sebelum submit
+                if (!this.formData.kk || 
+                    !this.formData.akta || 
+                    !this.formData.ijazah || 
+                    !this.formData.foto || 
+                    !this.formData.pernyataan) {
+                    alert('Harap lengkapi semua dokumen dan centang pernyataan!');
+                    return;
                 }
+                
+                // Di sini Anda bisa menambahkan kode untuk mengirim data ke server
+                // Contoh: menggunakan fetch API atau Axios
+                console.log('Form data:', this.formData);
+                
+                // Simulasi pengiriman data
+                alert('Pendaftaran berhasil dikirim! Kami akan menghubungi Anda melalui email atau WhatsApp.');
+                
+                // Reset form atau redirect ke halaman lain
+                // this.resetForm();
             },
+            
             resetForm() {
-                this.currentStep = 1;
                 this.formData = {
                     nama_lengkap: '',
                     jenis_kelamin: '',
@@ -525,9 +586,13 @@
                     nama_ibu: '',
                     pekerjaan_ibu: '',
                     no_hp_ortu: '',
-                    jurusan_pilihan: '',
+                    kk: null,
+                    akta: null,
+                    ijazah: null,
+                    foto: null,
                     pernyataan: false
                 };
+                this.currentStep = 1;
             }
         }));
     });
