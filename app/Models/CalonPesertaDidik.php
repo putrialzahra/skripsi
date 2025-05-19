@@ -24,6 +24,15 @@ class CalonPesertaDidik extends Model
         'pekerjaan_ortu',
         'package',
         'academic_year_id',
+        'nama_ayah',
+        'pekerjaan_ayah',
+        'nama_ibu',
+        'pekerjaan_ibu',
+        'kk',
+        'akta',
+        'ijazah',
+        'foto',
+        'pernyataan',
     ];
 
     public function academicYear(): BelongsTo

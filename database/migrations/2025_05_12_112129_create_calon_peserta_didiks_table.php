@@ -13,19 +13,29 @@ return new class extends Migration
     {
         Schema::create('calon_peserta_didiks', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
-            $table->string('birthplace');
-            $table->date('birth_date');
-            $table->string('address');
+            $table->string('nama_lengkap');
+            $table->enum('jenis_kelamin', ['L', 'P']);
+            $table->string('tempat_lahir');
+            $table->date('tanggal_lahir');
             $table->string('agama');
-            $table->string('nama_ortu');
+            $table->string('pekerjaan');
+            $table->string('kebangsaan')->default('WNI');
+            $table->text('alamat');
+            $table->string('no_hp');
+            $table->string('email')->unique();
+            $table->string('asal_sekolah'); // Paket A/B/C
+            $table->string('nama_lembaga');
+            $table->text('alamat_lembaga');
+            $table->string('nama_ayah');
+            $table->string('pekerjaan_ayah');
+            $table->string('nama_ibu');
+            $table->string('pekerjaan_ibu');
             $table->string('no_hp_ortu');
-            $table->string('pendidikan_ortu');
-            $table->string('pekerjaan_ortu');
-            $table->enum('package', ['Paket A', 'Paket B', 'Paket C']);
-            $table->foreignId('academic_year_id')->constrained()->onDelete('cascade');
-            $table->enum('jurusan_pilihan', ['Paket A', 'Paket B', 'Paket C']);
+            $table->string('kk')->nullable(); // path file
+            $table->string('akta')->nullable(); // path file
+            $table->string('ijazah')->nullable(); // path file
+            $table->string('foto')->nullable(); // path file
+            $table->boolean('pernyataan')->default(false);
             $table->timestamps();
         });
     }

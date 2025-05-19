@@ -249,57 +249,57 @@
                         <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                             <i class="fas fa-users text-primary"></i>
                         </div>
-        Data Orang Tua/Wali
-    </h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Data Ayah -->
-        <div class="md:col-span-2 bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
-            <h4 class="font-bold text-lg text-primary mb-4 flex items-center">
-                <i class="fas fa-male mr-2"></i> Data Ayah Kandung
-            </h4>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">Nama Ayah <span class="text-red-500">*</span></label>
-                    <input type="text" x-model="formData.nama_ayah" required
-                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
+                        Data Orang Tua/Wali
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Data Ayah -->
+                        <div class="md:col-span-2 bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
+                            <h4 class="font-bold text-lg text-primary mb-4 flex items-center">
+                                <i class="fas fa-male mr-2"></i> Data Ayah Kandung
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Nama Ayah <span class="text-red-500">*</span></label>
+                                    <input type="text" x-model="formData.nama_ayah" required
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Pekerjaan Ayah <span class="text-red-500">*</span></label>
+                                    <input type="text" x-model="formData.pekerjaan_ayah" required
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400"
+                                        placeholder="Masukkan pekerjaan ayah">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Data Ibu -->
+                        <div class="md:col-span-2 bg-gradient-to-r from-pink-50 to-pink-100 p-6 rounded-xl border border-pink-200">
+                            <h4 class="font-bold text-lg text-pink-700 mb-4 flex items-center">
+                                <i class="fas fa-female mr-2"></i> Data Ibu Kandung
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Nama Ibu <span class="text-red-500">*</span></label>
+                                    <input type="text" x-model="formData.nama_ibu" required
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Pekerjaan Ibu <span class="text-red-500">*</span></label>
+                                    <input type="text" x-model="formData.pekerjaan_ibu" required
+                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400"
+                                        placeholder="Masukkan pekerjaan ibu">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Kontak Orang Tua -->
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">No. HP Orang Tua <span class="text-red-500">*</span></label>
+                            <input type="text" x-model="formData.no_hp_ortu" required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">Pekerjaan Ayah <span class="text-red-500">*</span></label>
-                    <input type="text" x-model="formData.pekerjaan_ayah" required
-                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400"
-                           placeholder="Masukkan pekerjaan ayah">
-                </div>
-            </div>
-        </div>
-        
-        <!-- Data Ibu -->
-        <div class="md:col-span-2 bg-gradient-to-r from-pink-50 to-pink-100 p-6 rounded-xl border border-pink-200">
-            <h4 class="font-bold text-lg text-pink-700 mb-4 flex items-center">
-                <i class="fas fa-female mr-2"></i> Data Ibu Kandung
-            </h4>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">Nama Ibu <span class="text-red-500">*</span></label>
-                    <input type="text" x-model="formData.nama_ibu" required
-                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
-                </div>
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">Pekerjaan Ibu <span class="text-red-500">*</span></label>
-                    <input type="text" x-model="formData.pekerjaan_ibu" required
-                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400"
-                           placeholder="Masukkan pekerjaan ibu">
-                </div>
-            </div>
-        </div>
-        
-        <!-- Kontak Orang Tua -->
-        <div class="md:col-span-2">
-            <label class="block text-sm font-bold text-gray-700 mb-2">No. HP Orang Tua <span class="text-red-500">*</span></label>
-            <input type="text" x-model="formData.no_hp_ortu" required
-                   class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl input-focus transition placeholder-gray-400">
-        </div>
-    </div>
-</div>
 
                 <!-- Step 3: Upload Dokumen -->
                 <div x-show="currentStep === 3" class="form-section space-y-6">

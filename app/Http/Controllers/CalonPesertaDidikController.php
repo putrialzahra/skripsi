@@ -19,13 +19,25 @@ class CalonPesertaDidikController extends Controller
     {
         // Validasi input
         $request->validate([
-            'nama' => 'required',
+            'nama_lengkap' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required|date',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
-            'asal_sekolah' => 'required',
+            'agama' => 'required',
+            'pekerjaan' => 'required',
             'no_hp' => 'required',
+            'email' => 'required|email',
+            'nama_ayah' => 'required',
+            'pekerjaan_ayah' => 'required',
+            'nama_ibu' => 'required',
+            'pekerjaan_ibu' => 'required',
+            'no_hp_ortu' => 'required',
+            'kk' => 'nullable',
+            'akta' => 'nullable',
+            'ijazah' => 'nullable',
+            'foto' => 'nullable',
+            'pernyataan' => 'required',
         ]);
 
         // Simpan data ke database
