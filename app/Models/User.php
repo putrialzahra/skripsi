@@ -12,6 +12,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
+    use HasFactory, Notifiable, HasRoles;
 
     public function isAdmin()
     {
@@ -26,7 +27,7 @@ class User extends Authenticatable
       }
 
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, HasRoles;
+    
     
     //Admin
     //user
