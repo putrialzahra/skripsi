@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('asssigment_submissions', function (Blueprint $table) {
+        Schema::create('materials', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('file');
+            $table->foreignId('class_room_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('subject_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('asssigment_submissions');
+        Schema::dropIfExists('materials');
     }
 };

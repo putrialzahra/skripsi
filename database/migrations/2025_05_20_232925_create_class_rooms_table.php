@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attendances', function (Blueprint $table) {
+        Schema::create('class_rooms', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->foreignId('academic_year_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('package_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attendances');
+        Schema::dropIfExists('class_rooms');
     }
 };
