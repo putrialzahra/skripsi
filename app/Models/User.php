@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends Authenticatable
@@ -50,6 +51,6 @@ class User extends Authenticatable
 
     public function classRoomsTeaching()
     {
-        return $this->belongsToMany(ClassRoom::class, 'class_teachers', 'class_room_id');
+        return $this->belongsToMany(ClassRoom::class, 'class_teachers', 'teacher_id', 'class_room_id');
     }
 }

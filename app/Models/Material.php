@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\ClassRoom;
-use App\Models\Subject;use App\Models\ClassTeacher;
+use App\Models\Subject;
 
 class Material extends Model
 {
@@ -22,8 +22,9 @@ class Material extends Model
     public function subject()
     {
         return $this->belongsTo(Subject::class);
-    }
-   
+    }  
+    
+    
     
     
 }

@@ -21,7 +21,7 @@ class ClassRoom extends Model
     /**
      * Get the academic year that owns the class room.
      */
-    public function academicYear(): BelongsTo
+    public function academicYear()
     {
         return $this->belongsTo(AcademicYear::class);
     }
@@ -44,6 +44,11 @@ class ClassRoom extends Model
 
     public function students()
     {
-        return $this->belongsToMany(User::class, 'class_students', 'class_room_id', 'student_id');
+        return $this->belongsToMany(ClassStudent::class, 'class_students', 'class_room_id', 'student_id');
+    }
+
+    public function assignments()
+    {
+        return $this->hasMany(Assignment::class, 'class_room_id');
     }
 }

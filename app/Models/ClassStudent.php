@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use App\Models\ClassRoom;
+use App\Models\ClassTeacher;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 
-class ClassStudent extends Model
+class ClassStudent extends Model    
 {
     protected $fillable = [
         'class_room_id',

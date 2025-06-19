@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\ClassStudent;
+use App\Models\Assignment;
 
 class AssignmentSubmission extends Model
 {
@@ -19,6 +21,6 @@ class AssignmentSubmission extends Model
     }
     public function student()
     {
-        return $this->belongsTo(Student::class);
+        return $this->belongsTo(ClassStudent::class);
     }
 }

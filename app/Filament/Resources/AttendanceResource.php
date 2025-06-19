@@ -25,7 +25,7 @@ class AttendanceResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('student_id')
+                Forms\Components\Select::make('class_student_id')
                     ->label('Siswa')
                     ->required(),
                 Forms\Components\Select::make('class_room_id')
@@ -44,10 +44,14 @@ class AttendanceResource extends Resource
 {
     return $table
         ->columns([
-            Tables\Columns\TextColumn::make('student.name')
+            Tables\Columns\TextColumn::make('class_student_id')
+                ->label('Siswa')
+                ->getStateUsing(fn ($record) => $record->classStudent?->name)
                 ->sortable()
                 ->searchable(),
-            Tables\Columns\TextColumn::make('class_room.name')
+            Tables\Columns\TextColumn::make('class_room_id')
+                ->label('Kelas')
+                ->getStateUsing(fn ($record) => $record->classRoom?->name)
                 ->sortable()
                 ->searchable(),
             Tables\Columns\TextColumn::make('date')

@@ -4,7 +4,8 @@ namespace App\Models;
 
 use App\Models\ClassRoom;
 use App\Models\Subject;
-use App\Models\User;
+use App\Models\ClassTeacher;
+use App\Models\ClassStudent;
 use Illuminate\Database\Eloquent\Model;
 
 class Assignment extends Model
@@ -31,8 +32,16 @@ class Assignment extends Model
 
     public function teacher()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(ClassTeacher::class);
     }
 
+    public function submissions()
+    {
+        return $this->hasMany(AssignmentSubmission::class);
+    }
 
+    public function students()
+    {
+        return $this->belongsToMany(ClassStudent::class, 'assignment_submissions', 'assignment_id', 'student_id');
+    }
 }

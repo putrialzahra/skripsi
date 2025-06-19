@@ -12,4 +12,16 @@ class Package extends Model
         'price',
         'description',
     ];
+
+    public function subjects()
+    {
+        return $this->hasMany(Subject::class);
+    }
+
+    public function classRooms()
+    {
+        return $this->hasMany(ClassRoom::class);
+    }
+
+    
 }

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\ClassStudent;
+use App\Models\ClassRoom;
 
 class Attendance extends Model
 {
@@ -37,7 +39,7 @@ class Attendance extends Model
     // Tambahkan relasi ke Student
     public function student(): BelongsTo
     {
-        return $this->belongsTo(Student::class);
+        return $this->belongsTo(ClassStudent::class);
     }
 
     // Tambahkan relasi ke ClassRoom (perhatikan penulisan camelCase)
